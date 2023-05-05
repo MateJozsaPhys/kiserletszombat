@@ -36,10 +36,15 @@
   background-color: red;
 }
 
+.converged {
+  background-color: gray;
+}
+
 .slider {
   /*background-color: red;*/
-  /*background-color: rgba(128, 128, 128, 0.5);*/
-   fill: rgba(0, 0, 0, 0.7);
+  /*background-color: rgba(128, 128, 128, 0.0);*/
+   fill: rgba(128, 128, 128, 0.7);
+   /*opacity: 0.2;*/
 }
 
 #x-scale {
