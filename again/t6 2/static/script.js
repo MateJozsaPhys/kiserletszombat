@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const iterLimit = 100;
   const gridS = 100;
   const grid = document.getElementById("grid");
+  const rContainer = document.getElementById("r_holder");
   let columnID = 0;
   let sliderX = 0;
   let x = 0.01;
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
         db = 0;
         r = minR + (maxR-minR) * (columnID / gridS)
 //        notifyServer();
+        rContainer.innerHTML = `r = ${r.toFixed(2)}`;
         });
     grid.appendChild(cell);
   };

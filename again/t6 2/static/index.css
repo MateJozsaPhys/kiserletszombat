@@ -56,3 +56,34 @@
   background-repeat: no-repeat;
   background-position: center center;
 }
+
+#xr_holder{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+#r_holder {
+  flex-basis: 25%;
+  height: 10vh;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: red;
+  font-size: 3vh;
+  padding: 10px 0;
+
+}
+
+#x-scale {
+  height: 7vh;
+  background-image: url("img/slider.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  flex-basis: 75%;
+  width: 75%;
+  position: absolute;
+}
