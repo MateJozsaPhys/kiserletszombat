@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome (with Flask-SocketIO)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+         <script src="static/admin_public.js"></script>
+      <style>
+    body {
+      position: relative;
+    }   
+    canvas {
+      border: 1px solid black;
+    }
+    #stripe {
+      position: absolute;
+      width: 6px;
+      height: 400px;
+      background-color: rgba(128, 128, 128, 0.5);
+      cursor: pointer;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+    <h1>Welcome </h1>
+        
+          <div id="stripe"></div>
+         <canvas id="mainCanvas" width="800" height="400"></canvas>
+
+</body>
+</html>

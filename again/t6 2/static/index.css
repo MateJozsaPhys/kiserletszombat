@@ -1,0 +1,53 @@
+#bifurcation-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+#y-scale {
+  flex-basis: 25%;
+  height: 40vh;
+  background-image: url("img/y-scale.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#grid {
+  flex-basis: 75%;
+  display: grid;
+  grid-template-columns: repeat(100, 1fr);
+  grid-template-rows: repeat(100, 1fr);
+  grid-gap: 0px;
+  margin-left: 25%;
+  width: 75%;
+  height: 100%;
+  background-color: #eee;
+  position: absolute;
+}
+
+.cell {
+  background-color: #fff;
+}
+
+.highlighted {
+  background-color: red;
+}
+
+.slider {
+  /*background-color: red;*/
+  /*background-color: rgba(128, 128, 128, 0.5);*/
+   fill: rgba(0, 0, 0, 0.7);
+}
+
+#x-scale {
+  height: 7vh;
+  margin-left: 25%;
+  width: 75%;
+  background-image: url("img/slider.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

@@ -1,0 +1,115 @@
+.slider-container {
+  background-image: url("img/slider.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 0;
+  padding-bottom: 30%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  position: relative;
+}
+
+.slider {
+  -webkit-appearance: none;
+  background-color: transparent;
+  height: 100%;
+  width: 100%; 
+  position: absolute;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 100%;
+  width: 3%;
+  background-image: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-runnable-track {
+  height: 100%;
+}
+
+#bunny-grid {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 1px;
+  width: 100%;
+}
+
+.bunny-cell {
+  display: inline-block;
+  background-image: url(img/bunny.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.no-bunny-cell {
+  display: inline-block;
+  width: 100%;
+  padding-top: 100%;
+  background-color: white;
+}
+
+#time-evolution-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+#years {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: red;
+  font-size: 5vh;
+}
+
+#y-scale {
+  flex-basis: 25%;
+  height: 40vh;
+  background-image: url("img/y-scale.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#grid {
+  flex-basis: 75%;
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  grid-template-rows: repeat(30, 1fr);
+  grid-gap: 1px;
+  margin-left: 25%;
+  width: 75%;
+  height: 100%;
+  background-color: #eee;
+  position: absolute;
+}
+
+.cell {
+  background-color: #fff;
+}
+
+.highlighted {
+  background-color: red;
+}
+
+.separator {
+  width: 100%;
+  height: 0.5vh;
+  background-color: black;
+}
+
+#x-scale {
+  height: 7vh;
+  margin-left: 25%;
+  width: 75%;
+  background-image: url("img/x-scale.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
