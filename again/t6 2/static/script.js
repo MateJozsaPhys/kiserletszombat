@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const gridS = 100;
   const grid = document.getElementById("grid");
   const rContainer = document.getElementById("r_holder");
+  let isIterating = 0;
   let columnID = 0;
   let sliderX = 0;
   let x = 0.01;
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     cell.setAttribute("id", i);
     cell.classList.add("cell");
     cell.addEventListener("click", function() {
+        if (isIterating == 1) return;
         removeSliderHighlight();
         columnID = parseFloat(this.id) % gridS;
         console.log(columnID);
@@ -40,9 +42,10 @@ document.addEventListener("DOMContentLoaded", function() {
     grid.appendChild(cell);
   };
   highlightSlider();
-  setInterval(function() {
 
+  setInterval(function() {
     if (r >= minR && r <= maxR && db <= iterLimit) {
+      isIterating = 1;
       x = r * x * (1 - x);
       roundX2 = (gridS-1) - Math.round(x * (gridS-1));
       cellIndex = columnID + roundX2 * gridS;
@@ -59,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
             cellToHighlight.classList.add("converged");
         }
         lastCells = [];
+        isIterating = 0;
         }
     db += 1;
     }
