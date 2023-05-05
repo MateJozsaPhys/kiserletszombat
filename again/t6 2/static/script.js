@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Loaded");
-    const randomString = Math.random().toString(36).substring(2);
-    const textField = document.getElementById('name-field');
-    textField.value = randomString;
-    const socket = io.connect('http://' + document.domain + ':' + location.port);
-    console.log(socket.id);
-    socket.on('connect', () => {
-        socket.emit("after_connect_client", {'sid':socket.id, 'name':randomString});
-    });
+//    console.log("Loaded");
+//    const randomString = Math.random().toString(36).substring(2);
+//    const textField = document.getElementById('name-field');
+//    textField.value = randomString;
+//    const socket = io.connect('http://' + document.domain + ':' + location.port);
+//    console.log(socket.id);
+//    socket.on('connect', () => {
+//        socket.emit("after_connect_client", {'sid':socket.id, 'name':randomString});
+//    });
   const iterLimit = 100;
   const gridS = 100;
   const grid = document.getElementById("grid");
@@ -46,18 +46,19 @@ document.addEventListener("DOMContentLoaded", function() {
       cellIndex = columnID + roundX2 * gridS;
       cellToHighlight = grid.childNodes[cellIndex];
       cellToHighlight.classList.add("highlighted");
-      db += 1;
+
       if (db >= iterLimit * converged) {
         lastCells.push(cellIndex);
       }
       if (db == iterLimit) {
         resetColumn();
-        for (let i = 0; i < lastCells.length; i++) {
-            cellToHighlight = grid.childNodes[cellIndex];
+        for (let ii = 0; ii < lastCells.length; ii++) {
+            cellToHighlight = grid.childNodes[lastCells[ii]];
             cellToHighlight.classList.add("converged");
         }
         lastCells = [];
-      }
+        }
+    db += 1;
     }
   }, 10);
 
